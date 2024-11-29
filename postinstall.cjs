@@ -63,6 +63,9 @@ const downloadBinary = (url, dest) => {
 };
 
 const fileName = 'walrusjs';
+if (platform === 'win32') {
+	fileName = 'walrusjs.exe';
+}
 const filePath = path.join(binDir, fileName);
 
 downloadBinary(binUrl, filePath)

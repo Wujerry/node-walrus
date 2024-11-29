@@ -23,7 +23,7 @@ pnpm add walrus-js
 ### Create a WalrusClient
 
 ```javascript
-const walrus = require('./dist/walrusClient.js')
+const walrus = require('node-walrus')
 const path = require('path')
 
 const walrusConfigPath = path.join(__dirname, 'client_config.yaml')

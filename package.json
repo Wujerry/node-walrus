@@ -1,7 +1,20 @@
 {
-  "name": "walrus-js",
+  "name": "node-walrus",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.3",
+  "author": "JerryWu",
+  "license": "MIT",
+  "description": "A simple client for Walrus",
+  "keywords": [
+    "walrus",
+    "client",
+    "sui"
+  ],
+  "homepage": "https://github.com/Wujerry/walrus-js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wujerry/walrus-js.git"
+  },
   "type": "CommonJS",
   "main": "dist/walrusClient.js",
   "scripts": {

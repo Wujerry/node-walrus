@@ -41,7 +41,7 @@ class WalrusClient {
     this.jsonOutput = jsonOutput
 
     // set the path to the walrus binary
-    this.walrusBinaryPath = path.join(__dirname, '..', 'bin', 'walrusjs')
+    this.walrusBinaryPath = path.join(process.cwd(), 'node_modules', 'node-walrus', 'bin', 'walrusjs')
 
     if (this.configPath) {
       this.baseArgs.push('-c')
