@@ -2,6 +2,11 @@
 
 Walrus-JS is a JavaScript library for interacting with the Walrus blockchain. It provides a simple and intuitive API for developers to build decentralized applications (dApps).
 
+## Example
+Demo site: [https://walrus.wush.xyz](https://walrus.wush.xyz/)
+
+[https://github.com/Wujerry/node-walrus-example](https://github.com/Wujerry/node-walrus-example)
+
 ## Features
 
 - Auto download Walrus bin
