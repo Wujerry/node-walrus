@@ -33,7 +33,7 @@ class WalrusClient {
   private gasBudget: number = 100000000
   private jsonOutput: boolean = true
   private walrusBinaryPath: string
-  private baseArgs: string[] = []
+  private baseArgs: string[] = ['node-walrus']
 
   constructor(configPath?: string, walletPath?: string, jsonOutput: boolean = true, gasBudget?: number) {
     this.configPath = configPath
@@ -41,7 +41,7 @@ class WalrusClient {
     this.jsonOutput = jsonOutput
 
     // set the path to the walrus binary
-    this.walrusBinaryPath = path.join(process.cwd(), 'node_modules', 'node-walrus', 'bin', 'walrusjs')
+    this.walrusBinaryPath = 'npx'
 
     if (this.configPath) {
       this.baseArgs.push('-c')

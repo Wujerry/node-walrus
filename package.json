@@ -1,7 +1,7 @@
 {
   "name": "node-walrus",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.8",
   "author": "JerryWu",
   "license": "MIT",
   "description": "A simple client for Walrus",
@@ -19,8 +19,11 @@
   "main": "dist/walrusClient.js",
   "scripts": {
     "build": "tsc",
-    "postinstall": "node postinstall.cjs",
+    "preinstall": "node install.cjs",
     "dev-test": "tsc && node test.cjs"
+  },
+  "bin": {
+    "node-walrus": "./bin/walrusjs"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",

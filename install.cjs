@@ -70,9 +70,15 @@ const filePath = path.join(binDir, fileName);
 
 downloadBinary(binUrl, filePath)
 	.then(() => {
+		setExecutablePermission(filePath);
 		console.log(`Binary saved to ${filePath}`);
 	})
 	.catch((err) => {
 		console.error('Error downloading binary:', err);
 		process.exit(1);
 	});
+
+
+function setExecutablePermission(filePath) {
+	fs.chmodSync(filePath, 0o755);  // 设置执行权限
+}
