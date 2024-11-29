@@ -1,6 +1,6 @@
-# Walrus-JS
+# node-walrus
 
-Walrus-JS is a JavaScript library for interacting with the Walrus blockchain. It provides a simple and intuitive API for developers to build decentralized applications (dApps).
+node-walrus is a JavaScript library for interacting with the Walrus blockchain. It provides a simple and intuitive API for developers to build decentralized applications (dApps).
 
 ## Example
 Demo site: [https://walrus.wush.xyz](https://walrus.wush.xyz/)
@@ -18,9 +18,9 @@ Demo site: [https://walrus.wush.xyz](https://walrus.wush.xyz/)
 To install Walrus-JS, use npm or yarn or pnpm:
 
 ```bash
-npm install walrus-js
-yarn add walrus-js
-pnpm add walrus-js
+npm install node-walrus
+yarn add node-walrus
+pnpm add node-walrus
 ```
 
 ## Usage
