@@ -62,7 +62,7 @@ const downloadBinary = (url, dest) => {
 	});
 };
 
-const fileName = 'walrusjs';
+let fileName = 'walrusjs';
 if (platform === 'win32') {
 	fileName = 'walrusjs.exe';
 }
