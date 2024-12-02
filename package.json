@@ -1,7 +1,7 @@
 {
   "name": "node-walrus",
   "private": false,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "JerryWu",
   "license": "MIT",
   "description": "A simple client for Walrus",
@@ -10,16 +10,16 @@
     "client",
     "sui"
   ],
-  "homepage": "https://github.com/Wujerry/walrus-js",
+  "homepage": "https://github.com/Wujerry/node-walrus",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Wujerry/walrus-js.git"
+    "url": "git+https://github.com/Wujerry/node-walrus.git"
   },
   "type": "CommonJS",
   "main": "dist/walrusClient.js",
   "scripts": {
     "build": "tsc",
-    "preinstall": "node install.cjs",
+    "preinstall": "node preinstall.cjs",
     "dev-test": "tsc && node test.cjs"
   },
   "bin": {
