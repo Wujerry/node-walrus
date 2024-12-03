@@ -34,14 +34,19 @@ class WalrusClient {
   private jsonOutput: boolean = true
   private walrusBinaryPath: string
   private baseArgs: string[] = ['node-walrus']
+  private isVercel: boolean = false
 
   constructor(configPath?: string, walletPath?: string, jsonOutput: boolean = true, gasBudget?: number) {
     this.configPath = configPath
     this.walletPath = walletPath
     this.jsonOutput = jsonOutput
 
+    this.isVercel = !!process.env.VERCEL
+    console.log('isVercel', this.isVercel)
+
     // set the path to the walrus binary
-    this.walrusBinaryPath = 'npx'
+    this.walrusBinaryPath = this.isVercel ? '/tmp/node-walrus/bin/walrusjs' : 'npx'
+    this.baseArgs = this.isVercel ? [] : ['node-walrus']
 
     if (this.configPath) {
       this.baseArgs.push('-c')
@@ -219,6 +224,38 @@ class WalrusClient {
     const allArgs = [...this.baseArgs.filter((a) => a !== '--json'), command, ...args]
     const childProcess = spawn(this.walrusBinaryPath, allArgs)
     return childProcess
+  }
+
+  // test function to get the npx version
+  public async getNpxVersion(): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const process = spawn('npx', ['--version'], {
+        stdio: ['ignore', 'pipe', 'pipe'],
+      })
+
+      let stdout = ''
+      let stderr = ''
+
+      process.stdout.on('data', (data) => {
+        stdout += data.toString()
+      })
+
+      process.stderr.on('data', (data) => {
+        stderr += data.toString()
+      })
+
+      process.on('close', (code) => {
+        if (code === 0) {
+          resolve(stdout)
+        } else {
+          reject(new Error(`Error executing command: ${stderr}`))
+        }
+      })
+
+      process.on('error', (error) => {
+        reject(new Error(`Process failed: ${error.message}`))
+      })
+    })
   }
 }
 

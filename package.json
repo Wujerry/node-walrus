@@ -1,7 +1,7 @@
 {
   "name": "node-walrus",
   "private": false,
-  "version": "0.0.10",
+  "version": "0.0.13",
   "author": "JerryWu",
   "license": "MIT",
   "description": "A simple client for Walrus",

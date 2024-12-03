@@ -3,7 +3,7 @@
 node-walrus is a JavaScript library for interacting with the Walrus blockchain. It provides a simple and intuitive API for developers to build decentralized applications (dApps).
 
 ## Example
-Demo site: [https://walrus.wush.xyz](https://walrus.wush.xyz/)
+Demo site: [https://node-walrus-example.vercel.app/](https://node-walrus-example.vercel.app/)
 
 [https://github.com/Wujerry/node-walrus-example](https://github.com/Wujerry/node-walrus-example)
 
@@ -12,6 +12,7 @@ Demo site: [https://walrus.wush.xyz](https://walrus.wush.xyz/)
 - Auto download Walrus bin
 - Api to interact with the Walrus blockchain
 - Typescript support
+- support vercel
 
 ## Installation
 
@@ -31,8 +32,10 @@ pnpm add node-walrus
 const walrus = require('node-walrus')
 const path = require('path')
 
+// path to the walrus client config file
 const walrusConfigPath = path.join(__dirname, 'client_config.yaml')
 const suiWalletConfigPath = path.join(__dirname, 'sui_config.yaml')
+
 const walrusClient = new walrus.WalrusClient(walrusConfigPath, suiWalletConfigPath)
 ```
 

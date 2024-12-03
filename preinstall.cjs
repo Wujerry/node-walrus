@@ -33,10 +33,14 @@ if (platform === 'linux' && arch === 'x64') {
 }
 
 const binUrl = binUrls[binKey]
-const binDir = path.join(process.cwd(), 'bin')
+let binDir = path.join(process.cwd(), 'bin')
+
+if (process.env.VERCEL) {
+	binDir = '/tmp/node-walrus/bin'
+}
 
 if (!fs.existsSync(binDir)) {
-	fs.mkdirSync(binDir)
+	fs.mkdirSync(binDir, { recursive: true })
 }
 
 const downloadBinary = (url, dest) => {
