@@ -33,7 +33,7 @@ if (platform === 'linux' && arch === 'x64') {
 }
 
 const binUrl = binUrls[binKey]
-const binDir = path.join(__dirname, 'bin')
+const binDir = path.join(process.cwd(), 'bin')
 
 if (!fs.existsSync(binDir)) {
 	fs.mkdirSync(binDir)
